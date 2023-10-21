@@ -6,8 +6,6 @@
     box-sizing: border-box;
 }
 
-@import url(navbar_contract.css);
-
 .cuadrito {
     border: 1px solid rgb(39, 153, 10);
     text-align: center;
@@ -126,12 +124,21 @@
     text-decoration: underline;  
 }*/
 #jar1 {
-    font-size: 40px;
+    font-size: 3 vw;
     text-align: center;
     color: rgb(39, 153, 10);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 20px;
     /*background-color:rgba(33, 42, 10, 0.579)*/
+
+    white-space: nowrap;
+    width: 100%;
+    max-width: fit-content;
+    height: min-content;
+  
+    animation: escribiendo 1.5s steps(24), parpadeo .25s infinite step-end alternate;
+  
+    overflow: hidden ;
 }
 
 #jar2 {
@@ -866,3 +873,45 @@ input.invalido {
     display: none;
     
   }
+i{
+    font-size: 2vw;
+    color: white;
+    padding: 0.25vw;
+}
+
+body{
+
+    font-family: "Lora", serif !important;
+    
+}
+
+h2 h3 h4 h5 h6{
+
+    font-family: 'Open Sans', sans-serif !important;
+        
+}
+
+h1 {
+
+    font-family: 'Dancing Script', cursive !important;
+
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-5%);
+
+}
+
+/* Keyframes */
+
+@keyframes escribiendo {
+    from{
+      width: 0%;
+    } to{
+      width: 100%;
+    }
+    }
+      
+  @keyframes parpadeo {
+        50% {border-color: transparent}
+      }

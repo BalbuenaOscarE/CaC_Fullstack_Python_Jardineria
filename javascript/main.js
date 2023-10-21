@@ -7,7 +7,7 @@ document.getElementById("header").innerHTML = `
                         
                     </div>
                     <div class="col-8 col-m-8">
-                        <h1 id="jar1">Jardineria</h1>
+                        <h1 class="title" id="jar1" >Jardinería "La Magnolia"</h1>
                     </div>
                     
                     
@@ -43,14 +43,10 @@ document.getElementById("header").innerHTML = `
 `
 document.getElementById("footer").innerHTML = `
 
-        <a target="_blank" href="https://www.facebook.com/"><img width="25px" src="./imagenes/facebook.png"
-                alt="Facebook"></a>
-        <a target="_blank" href="https://wa.me/+5491112345678?text=Hello,%20please%20send%20me%20info"> <img
-                width="25px" src="./imagenes/whatsapp.png" alt="whatsapp"> </a>
-        <a target="_blank" href="mailto:codojardines@plantas.com"><img width="25px"
-                src="./imagenes/correo-electronico.png" alt="Mail"></a>
-        <a target="_blank" href="https://www.instagram.com/"><img width="25px" src="./imagenes/instagram.png"
-                alt="Instagram"></a>
+        <a target="_blank" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+        <a target="_blank" href="https://wa.me/+5491112345678?text=Hello,%20please%20send%20me%20info"><i class="fa-brands fa-whatsapp"></i></a>
+        <a target="_blank" href="mailto:codojardines@plantas.com"><i class="fa-solid fa-envelope"></i></a>
+        <a target="_blank" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
         <p>Pagina creada para el TP </p>
 `
 
@@ -74,6 +70,9 @@ function ocultar() {
 function mostrar() {
     document.getElementById('obj3').style.display = 'block';
 }
+
+
+// CREACIÓN TARJETAS
 
 let url = "./json/plantas.json"
 let datos = [];
@@ -104,3 +103,12 @@ fetch(url)
         document.getElementById("itemstienda").innerHTML = cad;
     }
     );
+
+
+
+let titulo = document.getElementById("jar1");
+
+document.addEventListener("DOMContentLoaded", function()
+{
+    titulo.style.display = "inline-block";
+});
