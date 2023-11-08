@@ -124,21 +124,20 @@
     text-decoration: underline;  
 }*/
 #jar1 {
-    font-size: 3 vw;
+    font-size: 5vw;
     text-align: center;
     color: rgb(39, 153, 10);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 20px;
+    padding: 2vw;
     /*background-color:rgba(33, 42, 10, 0.579)*/
 
     white-space: nowrap;
     width: 100%;
-    max-width: fit-content;
+    max-width: min-content;
     height: min-content;
   
     animation: escribiendo 1.5s steps(24), parpadeo .25s infinite step-end alternate;
   
-    overflow: hidden ;
 }
 
 #jar2 {

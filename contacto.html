@@ -36,22 +36,23 @@
                     <h3>CONTACTO</h3>
                 </div>
                 <div class="col-6">
-                <form action="show-data.html" target="_blank" action="https://formspree.io/f/{form_id}" method="post"></form>id="formulario">
+                <form action="show-data.html" id="formulario" target="_blank">
+                <!--action="https://formspree.io/f/{form_id}"  method="post">-->
                     
-                    <input placeholder="NOMBRE" required class="relleno" type="text" name="nombre" id="nombre">
+                    <input placeholder="NOMBRE" class="relleno" type="text" name="nombre" id="nombre" >
                     <span class="error relleno" id="errornom"></span>
                     <br><br>
-                    <input placeholder="APELLIDO" required class="relleno" type="text" name="apellido" id="apellido">
+                    <input placeholder="APELLIDO" class="relleno" type="text" name="apellido" id="apellido">
                     <span class="error relleno" id="errorapell"></span>
                     <br><br>
-                    <input placeholder="EMAIL" required class="relleno" type="mail" name="mail" id="mail">
+                    <input placeholder="EMAIL" class="relleno" type="mail" name="mail" id="mail">
                     <span class="error relleno" id="errormail"></span>
                     <br><br>
                     <label for="tiposjardinero">Que tipo de jardinero sos?</label>
                     <br>
                     <input type="radio" name="opcion" value="1"> Profesional
-                    <input type="radio" name="opcion" value="1"> Mi jardin!
-                    <input type="radio" name="opcion" value="1"> Solo curiosidad
+                    <input type="radio" name="opcion" value="2"> Mi jardin!
+                    <input type="radio" name="opcion" value="3"> Solo curiosidad
                     <br><br>
                     
                     <label for="preferencias">Que informacion te interesa?</label>
@@ -61,7 +62,7 @@
                     <input type="checkbox" name="preferencias" id="3" >Productos
                     <input type="checkbox" name="preferencias" id="4" >Otros
                     <br><br>
-                    <textarea placeholder="COMENTARIOS" required class="relleno" name="comment" id="comment" cols="30" rows="2"></textarea>
+                    <textarea placeholder="COMENTARIOS" class="relleno" name="comment" id="comment" cols="30" rows="2"></textarea>
                     
                     
                     <br><br>
