@@ -24,8 +24,16 @@ window.addEventListener("load", () => {
 
 /* Se agrega un evento "load" al objeto window. Cuando la página se carga, se ejecuta una función anónima que realiza la validación inicial de los campos de correo electrónico, nombre y apellido. Si los campos están vacíos o cumplen con las expresiones regulares, se les asigna la clase "valido"; de lo contrario, se les asigna la clase "invalido". */
 
-  const isValid = email.value.length === 0 || emailRegExp.test(email.value);
+
+  const isValid = email.value.trim() !== "" && emailRegExp.test(email.value);
+
   email.className = isValid ? "valido" : "invalido";
+
+  
+
+  
+
+  
 
   /* El “operador condicional” nos permite ejecutar if else en una forma más corta y simple.
 
@@ -33,10 +41,12 @@ La Sintaxis es:
 
 let result = condition ? value1 : value2; */
 
-  const isValidNom = nombre.value.length === 0 || textoForm.test(nombre.value);
+  const isValidNom = nombre.value.trim() !== "" && textoForm.test(nombre.value);
+
   nombre.className = isValidNom ? "valido" : "invalido";
 
-  const isValidApell = apellido.value.length === 0 || textoForm.test(apellido.value);
+  const isValidApell = apellido.value.trim() !== "" && textoForm.test(apellido.value);
+
   apellido.className = isValidApell ? "valido" : "invalido";
 
 });
@@ -45,19 +55,16 @@ email.addEventListener("input", () => {
 
   /* Se agregan eventos "input" a los elementos email, nombre y apellido. Estos eventos se disparan cuando el usuario interactúa con los campos de entrada. */
 
-  const isValid = email.value.length === 0 || emailRegExp.test(email.value);
+  const isValid = email.value.trim() !== "" && emailRegExp.test(email.value);
 
   if (isValid) {
-
     email.className = "valido";
     error.textContent = "";
     error.className = "error";
-
   } else {
-
     email.className = "invalido";
-
   }
+
 
    /* En las funciones de eventos "input" para email, nombre y apellido, se realiza una validación en tiempo real de los campos. Si el valor del campo cumple con las expresiones regulares, se le asigna la clase "valido". Si no cumple, se le asigna la clase "invalido". */
 
@@ -65,36 +72,28 @@ email.addEventListener("input", () => {
 
 nombre.addEventListener("input", () => {
 
-  const isValidNom = nombre.value.length === 0 || textoForm.test(nombre.value);
+  const isValidNom = nombre.value.trim() !== "" && textoForm.test(nombre.value);
 
   if (isValidNom) {
-
     nombre.className = "valido";
-    error.textContent = "";
-    error.className = "error";
-    
+    errorNom.textContent = "";
+    errorNom.className = "error";
   } else {
-
     nombre.className = "invalido";
-
   }
 
 });
 
 apellido.addEventListener("input", () => {
 
-  const isValidApell = apellido.value.length === 0 || textoForm.test(apellido.value);
+  const isValidApell = apellido.value.trim() !== "" && textoForm.test(apellido.value);
 
   if (isValidApell) {
-
     apellido.className = "valido";
-    error.textContent = "";
-    error.className = "error";
-
+    errorApell.textContent = "";
+    errorApell.className = "error";
   } else {
-
     apellido.className = "invalido";
-
   }
 
 });
@@ -111,55 +110,43 @@ function validarFormulario(evento) {
 
   /* La función validarFormulario toma un parámetro de evento y llama a evento.preventDefault() para evitar que el formulario se envíe automáticamente. */
 
-  const isValid = email.value.length === 0 || emailRegExp.test(email.value);
+  const isValid = email.value.trim() !== "" && emailRegExp.test(email.value);
 
   /* Se realiza la validación de los campos de correo electrónico, nombre y apellido en la función validarFormulario. Si alguno de los campos no cumple con las expresiones regulares, se asigna la clase "invalido" al campo respectivo y se muestra un mensaje de error en el elemento correspondiente. Si todos los campos son válidos, se envía el formulario utilizando this.submit(). */
 
   if (!isValid) {
-
     email.className = "invalido";
     error.textContent = "Ingrese un email correcto";
     error.className = "error activo";
     return;
-
   } else {
-
     email.className = "valido";
     error.textContent = "";
     error.className = "error";
-
   }
 
-  const isValidNom = nombre.value.length === 0 || textoForm.test(nombre.value);
+  const isValidNom = nombre.value.trim() !== "" && textoForm.test(nombre.value);
   if (!isValidNom) {
-
     nombre.className = "invalido";
     errorNom.textContent = "Ingrese un nombre correcto";
     errorNom.className = "error activo";
     return;
-
   } else {
-
     nombre.className = "valido";
     errorNom.textContent = "";
     errorNom.className = "error";
-
   }
 
-  const isValidApell = apellido.value.length === 0 || textoForm.test(apellido.value);
+  const isValidApell = apellido.value.trim() !== "" && textoForm.test(apellido.value);
   if (!isValidApell) {
-
     apellido.className = "invalido";
     errorApell.textContent = "Ingrese un apellido correcto";
     errorApell.className = "error activo";
     return;
-
   } else {
-
     apellido.className = "valido";
     errorApell.textContent = "";
     errorApell.className = "error";
-
   }
 
   this.submit();
